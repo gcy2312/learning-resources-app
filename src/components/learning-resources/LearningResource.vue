@@ -3,7 +3,9 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat">Delete</base-button>
+        <base-button mode="flat" @click="deleteResource(id)"
+          >Delete</base-button
+        >
       </header>
 
       <p>{{ desc }}</p>
@@ -17,6 +19,7 @@
 <script>
 export default {
   props: ['id', 'title', 'desc', 'link'],
+  inject: ['deleteResource'],
 };
 </script>
 
